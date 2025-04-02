@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import TypingTest from '@/components/ui/typingTest';
-import SignIn from '@/components/SignIn';
 import { Button } from '@/components/ui/button';
+import Link from "next/link";
 import DropdownSelector from '@/components/ui/dropdownSelector';
 
 export default function Home() {
@@ -25,12 +25,12 @@ export default function Home() {
 
   return (
     <>
-      <Button asChild>
-        <a href="/api/auth/login">Login</a>
-      </Button>
-      <Button asChild>
-       <a href="/api/auth/logout">Logout</a>
-      </Button>
+      <Link href= "/login">
+      <Button> Sign in </Button>
+      </Link>
+      <Link href= "/api/auth/signout">
+      <Button> Sign out </Button>
+      </Link>
         <div className="container mx-auto p-4">
         <h2 className="text-2xl font-bold mb-4">Typing Test Mode Selector</h2>
 
@@ -54,3 +54,5 @@ export default function Home() {
     </>
   );
 }
+
+
